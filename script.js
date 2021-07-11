@@ -2,9 +2,8 @@ array = []
 window.document.querySelector('#numero').focus()
 
 function adicionarNoArray() {
-    var num = window.document.querySelector('#numero')
+    var numero = window.document.querySelector('#numero').value
     var res = window.document.querySelector('#res')
-    numero = num.value
     
     if (numero.length == 0 || numero > 100 || numero < 1) {
         window.alert("Valor invalido.")
@@ -48,4 +47,5 @@ function mostrarDados() {
             finalizar.innerHTML += `A média dos valores digitados é ${media}.`
         }
     }
+    window.document.querySelector('#numero').focus()
 }
