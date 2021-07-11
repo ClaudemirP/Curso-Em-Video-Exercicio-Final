@@ -1,11 +1,15 @@
 array = []
+window.document.querySelector('#numero').focus()
 
 function adicionarNoArray() {
-    var numero = window.document.querySelector('#numero').value
+    var num = window.document.querySelector('#numero')
     var res = window.document.querySelector('#res')
+    numero = num.value
     
     if (numero.length == 0 || numero > 100 || numero < 1) {
         window.alert("Valor invalido.")
+    } else if (array.indexOf(Number(numero)) != -1) {
+        window.alert("Valor já adicionado.")
     } else {
         array.push(Number(numero))
         res.innerHTML = ''
@@ -14,6 +18,8 @@ function adicionarNoArray() {
             finalizar.innerHTML = ``
         }
     }
+    window.document.querySelector('#numero').value = ``
+    window.document.querySelector('#numero').focus()
 }
 
 function mostrarDados() {
