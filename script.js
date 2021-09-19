@@ -26,7 +26,7 @@ function mostrarDados() {
         window.alert("Adicione valores antes de finalizar.")
     }else { 
     var finalizar = window.document.querySelector('#finalizar')
-    c = 0
+    somaTodosNumeros= 0
     
     array.sort(function(a,b) {
         if (a > b) return 1
@@ -35,16 +35,16 @@ function mostrarDados() {
     })
 
         for (let pos in array) {
-            p = 1
-            c += array[pos]
-            p += Number(pos)
-            media = c / p
+            somaTotalCadastros= 1
+            somaTodosNumeros+= array[pos]
+            somaTotalCadastros+= Number(pos)
+            media = somaTodosNumeros/ somaTotalCadastros
             finalizar.innerHTML = ``
-            finalizar.innerHTML += `Ao todo, temos ${p} números cadastrados.<br>`
+            finalizar.innerHTML += `Ao todo, temos ${somaTotalCadastros} números cadastrados.<br>`
             finalizar.innerHTML += `O maior valor informado foi ${array[pos]}.<br>`
             finalizar.innerHTML += `O menor valor informado foi ${array[0]}.<br>`  
-            finalizar.innerHTML += `Somando todos os valores, temos ${c}.<br>`
-            finalizar.innerHTML += `A média dos valores digitados é ${media}.`
+            finalizar.innerHTML += `Somando todos os valores, temos ${somaTodosNumeros}.<br>`
+            finalizar.innerHTML += `A média dos valores digitados é ${media.toFixed(2)}.`
         }
     }
     window.document.querySelector('#numero').focus()
